@@ -1,0 +1,29 @@
+tech test
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'test';
+0. create database
+CREATE DATABASE testdb;
+USE testdb;
+1. create sql files numbered correctly √
+2. create table versionTable 
+
+CREATE TABLE versionTable (version SMALLINT(3)); √
+
+3. add Single row version √
+4. insert into version table 43 √
+
+
+5. create array and order scripts by number
+
+6. if version == max Scripts then print 'Latest version is installed' 
+else 
+execute scripts where scriptVersion > version 
+insert into version Table scriptNumber
+
+8. Improve order scripts by number to take into account gaps and no dot
+
+7. add parameters to script for username and password input
+
+--directory_with_sql_scripts scripts --username_for_the_db user1 --db_host localhost --db_name test --db_password pass
+
+UPDATE versionTable SET version = 42 WHERE version = 43;
