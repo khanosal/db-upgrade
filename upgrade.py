@@ -29,9 +29,6 @@ db_host = args.db_host
 db_name = args.db_name
 db_password = args.db_password
 
-# grabs sql_scripts_dir variable and prints ordered list of files
-for filename in (sorted(os.listdir(sql_scripts_dir))):
-    print filename
 
 cnx = mysql.connector.connect(user=db_user, password=db_password,
                               host=db_host,
@@ -44,12 +41,23 @@ query = ("SELECT * FROM versionTable")
 
 cursor.execute(query)
 
-for (version) in cursor:
-    print version
+version = cursor.fetchone()[0]
+
+print version
+
+# for (version) in cursor:
+#     print version
 
 cursor.close()
 
 cnx.close()
+
+
+# grabs sql_scripts_dir variable and prints ordered list of files
+for filename in (sorted(os.listdir(sql_scripts_dir))):
+    script_version = int(filename[:3])
+    if script_version > version:
+        print script_version
 
 # for (first_name, last_name, hire_date) in cursor:
 #   print("{}, {} was hired on {:%d %b %Y}".format(
