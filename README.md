@@ -13,6 +13,6 @@ argparse,
 mysql.connector,
 mysql.connector import errorcode
 
-Run command:
+## Run command:
 
 python upgrade.py
