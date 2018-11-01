@@ -1,1 +1,1 @@
-CREATE TABLE testTable (name VARCHAR(20);
+CREATE TABLE testTable (name VARCHAR(20));
